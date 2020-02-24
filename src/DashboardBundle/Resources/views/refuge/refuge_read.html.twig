@@ -1,0 +1,116 @@
+{% extends 'base_dashboard.html.twig' %}
+
+{% block gestion_refuge %}
+
+    <div class="content">
+        <div class="col-md-12">
+            <div class="card ">
+
+                <div class="card-header card-header-success card-header-icon">
+                    <div class="card-icon">
+
+                        <i class="material-icons">table_chart</i>
+                    </div>
+                    <h4 class="card-title">Liste Des Refugees</h4>
+                </div>
+
+                <div class="card-body"><br>
+                    <script src="{{ asset('js2/jquery.min.js') }}"></script>
+                    <th> <input type="text" id="search" placeholder="Search  ..."></th>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive table-sales">
+                                <div class="modal-footer justify-content-center">
+                                    <a href="ajoutRef" class="btn btn-primary btn-round">Ajouter </a>
+                                </div>
+
+
+                                <table class="table" id="tableac">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-left">ID Refugee</th>
+                                        <th class="text-left">Nom</th>
+                                        <th class="text-left">Prénom</th>
+                                        <th class="text-left">Nationalité</th>
+                                        <th class="text-left">Date De Naissance</th>
+                                        <th class="text-left">Lieu De Naissance</th>
+                                        <th class="text-left">Sexe</th>
+                                        <th class="text-left">Situation Sociale</th>
+                                        <th class="text-left">Entreprise</th>
+                                        <th class="td-actions">Supprimer </th>
+                                        <th class="td-actions">Modifier </th>
+
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for refuge in refuge %}
+                                        <tr>
+                                            <td>{{ refuge.id }}</td>
+                                            <td class="text-left">{{ refuge.nom }}</td>
+                                            <td class="text-left">{{ refuge.prenom }}</td>
+                                            <td class="text-left">{{ refuge.nationalite }}</td>
+                                            <td class="text-left">{{ refuge.birthD|date("d/m/y") }}</td>
+                                            <td class="text-left">{{ refuge.birthLoc }}</td>
+                                            <td class="text-left">{{ refuge.sexe }}</td>
+                                            <td class="text-left">{{ refuge.socialSit }}</td>
+                                            <td class="text-left">{{ refuge.entreprise.nom }}</td>
+
+                                            <td><a  href="{{path('deleteRef',{'id':refuge.id})}}" >
+                                                    <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="" style="width: 60px;">
+                                                        <i class="material-icons">close</i>
+                                                    </button>
+                                                </a>
+                                            </td>
+                                            <td><a  href="{{path('modifRef',{'id':refuge.id})}}">
+                                                    <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="" style="width: 60px;">
+                                                        <i class="material-icons">edit</i>
+                                                    </button>
+                                                </a>
+                                            </td>
+
+
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        $(document).ready(function(){
+            $('#search').keyup(function(){
+                search_table($(this).val());
+            });
+            function search_table(value){
+                $('#tableac tbody tr').each(function(){
+                    var found = 'false';
+                    $(this).each(function(){
+                        if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                        {
+                            found = 'true';
+                        }
+                    });
+                    if(found == 'true')
+                    {
+                        $(this).show();
+
+                    }
+                    else
+                    {
+                        $(this).hide();
+
+                    }
+                });
+            }
+        });
+    </script>
+
+{% endblock %}

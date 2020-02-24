@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block update_member %}
+    <div class="page-header header-filter" data-parallax="true" style="background-image: url( {{ asset ('assets/myimg/4.jpg')}}); transform: translate3d(0px, 76.3333px, 0px); height: 300px;" ></div>
+    <div class="main main-raised" style="margin-bottom: 30px;">
+        <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+                <h2 class="text-center title">update member</h2>
+                         <form class="contact-form" name="registration_form" method="post">
+                                 <div class="col-md-6">
+                                     <div class="form-group bmd-form-group" >
+                                         <label class="bmd-label-floating"  class="required"> email</label>
+                                         {{ form_widget(form.email, {'attr': { 'class' : 'form-control' , 'style': 'width:400px;'}}) }}{#                            </div>#}
+                                     </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                     <div class="form-group bmd-form-group" >
+                                         <label class="bmd-label-floating"  class="required"> captcha</label>
+                                         {{ form_widget(form.captcha, {'attr': { 'class' : 'form-control' , 'style': 'width:400px;'}}) }}{#                            </div>#}
+                                     </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                     <div class="form-group bmd-form-group" >
+                                         <label class="bmd-label-floating"  class="required"> username</label>
+                                         {{ form_widget(form.username, {'attr': { 'class' : 'form-control' , 'style': 'width:400px;'}}) }}{#                            </div>#}
+                                     </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                     <div class="form-group bmd-form-group" >
+                                         <label class="bmd-label-floating"  class="required"> password</label>
+                                         {{ form_widget(form.plainPassword.first, {'attr': { 'class' : 'form-control' , 'style': 'width:400px;'}}) }}{#                            </div>#}
+                                     </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                     <div class="form-group bmd-form-group" >
+                                         <label class="bmd-label-floating"  class="required"> confirm password </label>
+                                         {{ form_widget(form.plainPassword.second, {'attr': { 'class' : 'form-control' , 'style': 'width:400px;'}}) }}{#                            </div>#}
+                                     </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                     <div class="form-group bmd-form-group" >
+                                         <label class="bmd-label-floating"  class="required"> city </label>
+                                         {{ form_widget(form.city, {'attr': { 'class' : 'form-control' , 'style': 'width:400px;'}}) }}
+                                     </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                     <label class="bmd-label-floating"  class="required"> domain </label>
+                                     {{ form_widget(form.domain, {'attr': { 'class' : 'form-control' , 'style': 'width:400px;'}}) }}
+                                 </div>
+                             <br>
+                                 <div class="col-md-6">
+                                     <input type="submit" class="btn-success" value="{{ 'modify'|trans }}" />
+                                 </div>
+                                 {{ form_row(form._token) }}
+                         </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

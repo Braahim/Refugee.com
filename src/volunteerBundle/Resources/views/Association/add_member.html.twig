@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block add_member %}
+
+    <div class="page-header header-filter" data-parallax="true" style="background-image: url( {{ asset ('assets/myimg/4.jpg')}}); transform: translate3d(0px, 76.3333px, 0px); height: 300px;" ></div>
+    <div class="main main-raised" style="margin-bottom: 30px;">
+        <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+                {{ form_start(form)}}
+                <input type="submit" value="{{ 'modify'|trans }}" />
+                {{ form_end(form)}}
+
+                <h2 class="text-center title">Modify member</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group bmd-form-group" >
+                            <label class="bmd-label-floating"  class="required"> First Name</label>
+                            {{ form_widget(form.username, {'attr': { 'class' : 'form-control' , 'style': 'width:350px;'}}) }}{#                            </div>#}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group bmd-form-group" >
+                            <label class="bmd-label-floating"  class="required"> Email</label>
+                            {{ form_widget(form.email, {'attr': { 'class' : 'form-control' , 'style': 'width:400px;'}}) }}{#                            </div>#}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group bmd-form-group" >
+                            <label class="bmd-label-floating"  class="required"> Domaine</label>
+                            {{ form_widget(form.domain, {'attr': { 'class' : 'form-control' , 'style': 'width:350px;'}}) }}{#                            </div>#}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group bmd-form-group" >
+                            <label class="bmd-label-floating"  class="required"> City</label>
+                            {{ form_widget(form.city, {'attr': { 'class' : 'form-control' , 'style': 'width:400px;'}}) }}{#                            </div>#}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group bmd-form-group" >
+                            {{ form_widget(form.captcha, {'attr': { 'class' : 'form-control' , 'style': 'width:350px;'}}) }}{#                            </div>#}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="form-group bmd-form-group"><label for="registration_form_plainPassword_first" class="required">Password</label><input class="form-control" type="password" id="registration_form_plainPassword_first" name="registration_form[plainPassword][first]" required="required" autocomplete="new-password"></div>
+                        <div class="form-group bmd-form-group"><label for="registration_form_plainPassword_second" class="required">Repeat password</label><input class="form-control"  type="password" id="registration_form_plainPassword_second" name="registration_form[plainPassword][second]" required="required" autocomplete="new-password"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group bmd-form-group" >
+                            <input type="submit" value="{{ 'registration.submit'|trans }}" />
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+                <h2 class="text-center title">Add member</h2>
+                <form class="contact-form" name="volunteerbundle_member" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group" >
+                                <label class="bmd-label-floating" for="volunteerbundle_member_nom" class="required"> First Name</label>
+                                <input type="text" id="volunteerbundle_member_nom" name="volunteerbundle_member[nom]" required="required" maxlength="255" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group" >
+                                <label class="bmd-label-floating" for="volunteerbundle_member_prenom" class="required"> Last Name</label>
+                                <input type="text" id="volunteerbundle_member_prenom" name="volunteerbundle_member[prenom]" required="required" maxlength="255" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group" style="margin-top: 15px;" >
+                                <label class="bmd-label-floating" for="volunteerbundle_member_mail" class="required"> Mail</label>
+                                <input type="text" id="volunteerbundle_member_mail" name="volunteerbundle_member[mail]" required="required" maxlength="255" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group bmd-form-group" >
+                                <label class="bmd-label-floating" for="volunteerbundle_member_poste" class="required"></label>
+                                <select class="form-control selectpicker" data-style="btn btn-link" id="volunteerbundle_member_poste" name="volunteerbundle_member[poste]">
+                                    <option value="0">Poste</option>
+                                    <option value="1">President</option>
+                                    <option value="2">Responsable RH</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 ml-auto mr-auto text-center">
+                            <button  class="btn btn-primary btn-raised" type="submit" id="volunteerbundle_member_OK" name="volunteerbundle_member[OK]">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                    {{ form_row(form._token) }}
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

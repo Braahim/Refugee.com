@@ -1,0 +1,376 @@
+{% extends 'base.html.twig' %}
+
+
+{% block association_profile %}
+
+    <body class="profile-page sidebar-collapse">
+
+    <div class="page-header header-filter" data-parallax="true" style="background-image: url( {{ asset ('assets/myimg/4.jpg')}}); transform: translate3d(0px, 76.3333px, 0px);"></div>
+    <div class="main main-raised">
+        <div class="profile-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 ml-auto mr-auto">
+                        <div class="profile">
+                            <div class="avatar">
+                                <img src="{{ asset("../assets/myimg/1.png") }}" alt="Circle Image" class="img-raised rounded-circle img-fluid">
+                            </div>
+                            <div class="name">
+                                <h3 class="title">{{ app.user.username }}</h3>
+                                <h6>helth</h6>
+                                <a href="#pablo" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-dribbble"></i></a>
+                                <a href="#pablo" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#pablo" class="btn btn-just-icon btn-link btn-pinterest"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                        <div class="follow">
+                            <button class="btn btn-fab btn-primary btn-round" rel="tooltip" title="" data-original-title="Follow this user">
+                                <i class="material-icons">add</i>
+                                <div class="ripple-container"></div></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 ml-auto mr-auto">
+                    <div class="profile-tabs">
+                        <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active show" href="#connections" role="tab" data-toggle="tab" aria-selected="false">
+                                    <i class="material-icons">people</i>
+                                    Members
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="#work" role="tab" data-toggle="tab" aria-selected="true">
+                                    <i class="material-icons">palette</i>
+                                    Events
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="#refugee" role="tab" data-toggle="tab" aria-selected="true">
+                                    <i class="material-icons">people</i>
+                                    Réfugiés
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content tab-space">
+                <div class="tab-pane work " id="work">
+                    <div class="row">
+                        <div class="col-md-7 ml-auto mr-auto ">
+                            <h4 class="title">Events</h4>
+                            <div class="col-lg-12 col-md-12 ml-auto mr-auto">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th class="text-center">Id</th>
+                                            <th>Title</th>
+                                            <th>Date</th>
+                                            <th class="text-right">City</th>
+                                            <th class="text-right">Nb participants </th>
+                                            <th class="text-right">Type</th>
+                                            <th class="text-right">Action</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td>Andrew Mike</td>
+                                            <td>Develop</td>
+                                            <td>2013</td>
+                                            <td class="text-right">€ 99,225</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" data-original-title="" title="">
+                                                    <i class="material-icons">person</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                    <i class="material-icons">edit</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
+                                                    <i class="material-icons">close</i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">2</td>
+                                            <td>John Doe</td>
+                                            <td>Design</td>
+                                            <td>2012</td>
+                                            <td class="text-right">€ 89,241</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" class="btn btn-info btn-round btn-just-icon btn-sm" data-original-title="" title="">
+                                                    <i class="material-icons">person</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" class="btn btn-success btn-round btn-just-icon btn-sm" data-original-title="" title="">
+                                                    <i class="material-icons">edit</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-just-icon btn-sm" data-original-title="" title="">
+                                                    <i class="material-icons">close</i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">3</td>
+                                            <td>Alex Mike</td>
+                                            <td>Design</td>
+                                            <td>2010</td>
+                                            <td class="text-right">€ 92,144</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" class="btn btn-info btn-link btn-just-icon btn-sm" data-original-title="" title="">
+                                                    <i class="material-icons">person</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" class="btn btn-success btn-link btn-just-icon btn-sm" data-original-title="" title="">
+                                                    <i class="material-icons">edit</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" class="btn btn-danger btn-link btn-just-icon btn-sm" data-original-title="" title="">
+                                                    <i class="material-icons">close</i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">4</td>
+                                            <td>Mike Monday</td>
+                                            <td>Marketing</td>
+                                            <td>2013</td>
+                                            <td class="text-right">€ 49,990</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" class="btn btn-info btn-round btn-just-icon btn-sm" data-original-title="" title="">
+                                                    <i class="material-icons">person</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" class="btn btn-success btn-round btn-just-icon btn-sm" data-original-title="" title="">
+                                                    <i class="material-icons">edit</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-just-icon btn-sm" data-original-title="" title="">
+                                                    <i class="material-icons">close</i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">5</td>
+                                            <td>Paul Dickens</td>
+                                            <td>Communication</td>
+                                            <td>2015</td>
+                                            <td class="text-right">€ 69,201</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" data-original-title="" title="">
+                                                    <i class="material-icons">person</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                    <i class="material-icons">edit</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
+                                                    <i class="material-icons">close</i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 mr-auto ml-auto stats">
+                            <h4 class="title">Stats</h4>
+                            <ul class="list-unstyled">
+                                <li><b>60</b> events</li>
+                                <li><b>1.2K</b> Budget</li>
+                            </ul>
+                            <hr>
+                            <h4 class="title">About his Work</h4>
+                            <p class="description"> La Croissant-Rouge tunisien (CRT) est une association humanitaire tunisienne fondée en 1956,
+                                après l'indépendance du pays. Le CRT est l'une des sociétés
+                                nationales du Mouvement international de la Croix-Rouge et du Croissant-Rouge.</p>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane connections active show" id="connections">
+                    <div class="row">
+                        <div class="col-md-7 ml-auto mr-auto ">
+                            <h4 class="title">Members</h4>
+                            <td class="td-actions text-right">
+                                <a href="{{ path('volunteer_association_member_add')}}" >
+                                    <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" data-original-title="" title="">
+                                        <i class="material-icons">add</i>
+                                        <div class="ripple-container"></div>
+                                    </button>
+                                </a>
+                            </td>
+                            <div class="col-lg-12 col-md-12 ml-auto mr-auto">
+                                <br>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th class="text-center">Id</th>
+                                            <th>Nom</th>
+                                            <th>Prenom</th>
+                                            <th class="text-left">Mail</th>
+                                            <th class="text-right">Action</th>
+                                        </tr>
+                                        </thead>
+                                        {% for entity in member %}
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-center">{{ entity.id }}</td>
+                                                <td>{{ entity.username }}</td>
+                                                <td>{{ entity.city }}</td>
+                                                <td>{{ entity.email }}</td>
+                                                <td class="td-actions text-right">
+                                                    <a href="{{ path('volunteer_association_member_update',{'id':entity.id })}}" >
+                                                        <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                    </a>
+                                                </td>
+                                                <td class="td-actions text-right">
+                                                    <a href="{{ path('volunteer_association_member_delete',{'id':entity.id })}}" >
+                                                        <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        {% endfor %}
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-2 mr-auto ml-auto stats">
+                            <h4 class="title">Stats</h4>
+                            <ul class="list-unstyled">
+                                <li><b>60</b> events</li>
+                                <li><b>1.2K</b> Budget</li>
+                            </ul>
+                            <hr>
+                            <h4 class="title">About his Work</h4>
+                            <p class="description"> La Croissant-Rouge tunisien (CRT) est une association humanitaire tunisienne fondée en 1956,
+                                après l'indépendance du pays. Le CRT est l'une des sociétés
+                                nationales du Mouvement international de la Croix-Rouge et du Croissant-Rouge.</p>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane connections active show" id="refugee">
+                    <div class="row">
+                        <div class="col-md-10 ml-auto mr-auto ">
+                            <h4 class="title">Réfugiés</h4>
+                            <td class="td-actions text-right">
+                                <a href="{{ path('volunteer_ajoutRefugie')}}" >
+                                    <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" data-original-title="" title="">
+                                        <i class="material-icons">add</i>
+                                        <div class="ripple-container"></div>
+                                    </button>
+                                </a>
+                            </td>
+                            <div class="col-lg-12 col-md-12 ml-auto mr-auto">
+                                <br>
+                                <div class="table-responsive">
+                                    <table class="table table-shopping">
+                                        <thead>
+                                        <tr>
+                                            <th class="text-center"></th>
+                                            <th></th>
+                                            <th class="th-description">Date et lieu de Naissance</th>
+                                            <th class="th-description">Gender</th>
+                                            <th class="text-right">Social Situation</th>
+                                            <th class="text-right">Camp</th>
+                                            <th class="text-right"></th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        {% for r in refugee %}
+                                            <tr>
+                                                <td>
+                                                    <div class="img-container">
+                                                        <img src="{{ asset('uploads/images/' ~r.img) }}">
+                                                    </div>
+                                                </td>
+                                                <td class="td-name">
+                                                    <a href="{{ path('refugee_afficherDetaille',{'id':r.id}) }}" onmouseover="this.className='survol';" onmouseout="this.className='parti';">{{ r.nom }} {{ r.prenom }}</a>
+                                                    <br><small>{{ r.nationalite}}</small>
+                                                    <style>
+                                                        .survol    {    text-decoration: underline;
+
+                                                        }
+
+                                                        .parti {
+                                                            text-decoration: transparent;
+                                                        }
+                                                    </style>
+                                                </td>
+                                                <td>
+                                                    {{ r.birthD | date('m/d/Y') }}   à   {{ r.birthLoc }}
+                                                </td>
+                                                <td>
+                                                    {% if r.sexe == 'F' %}
+                                                        Femme
+                                                    {% elseif r.sexe == 'H' %}
+                                                        Homme
+                                                    {% else %}
+                                                        Autre
+                                                    {% endif %}
+
+                                                </td>
+                                                <td class="td-number">
+                                                    {{ r.socialSit }}
+                                                </td>
+                                                <td class="td-number">
+
+                                                    {{ r.camp.libelle }}
+
+                                                </td>
+                                                <td class="td-number">
+                                                    <a href = "{{ path('refugee_modifierRefugie',{'id':r.id}) }}" >
+                                                        <button type="button" rel="tooltip" class="btn btn-success btn-round" title="Modifier ">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                    </a>
+                                                    <a href = "{{ path('refugee_supprimerRefugie',{'id':r.id}) }}" >
+                                                        <button type="button" rel="tooltip" class="btn btn-danger btn-round" title="Supprimer" onclick="myFucntion({#{ r.id }#});">
+
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                    </a>
+                                                </td>
+
+                                            </tr>
+                                        {% endfor %}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                  <!--      <div class="col-md-2 mr-auto ml-auto stats">
+                            <h4 class="title">Stats</h4>
+                            <ul class="list-unstyled">
+                                <li><b>60</b> events</li>
+                                <li><b>1.2K</b> Budget</li>
+                            </ul>
+                            <hr>
+                            <h4 class="title">About his Work</h4>
+                            <p class="description"> La Croissant-Rouge tunisien (CRT) est une association humanitaire tunisienne fondée en 1956,
+                                après l'indépendance du pays. Le CRT est l'une des sociétés
+                                nationales du Mouvement international de la Croix-Rouge et du Croissant-Rouge.</p>
+                            <hr>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </body>
+
+
+{% endblock %}

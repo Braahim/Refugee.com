@@ -1,0 +1,28 @@
+dashboard_homepage:
+    path:     /
+    defaults: { _controller: DashboardBundle:Dashboard:dashboard }
+
+dashboard_gestion_association_page:
+  path:     /gestion_association
+  defaults: { _controller: DashboardBundle:Dashboard_gestion_association:read_association }
+
+dashboard_delete_association_page:
+  path:     /delete_association/{id}
+  defaults: { _controller: DashboardBundle:Dashboard_gestion_association:delete_association }
+
+dashboard_gestion_refuge_page:
+  path:     /gestion_refuge
+  defaults: { _controller: DashboardBundle:Dashboard_gestion_refuge:read_refuge }
+
+deleteRef:
+  path:     /deleteRef/{id}
+  defaults: { _controller: DashboardBundle:Dashboard_gestion_refuge:deleteRef }
+
+modifRef:
+  path:     /modifRef/{id}
+  defaults: { _controller: DashboardBundle:Dashboard_gestion_refuge:modifRef }
+
+ajoutRef:
+  path:     /ajoutRef
+  defaults: { _controller: DashboardBundle:Dashboard_gestion_refuge:ajoutRef }
+

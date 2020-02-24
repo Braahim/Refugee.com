@@ -1,0 +1,37 @@
+
+dashboard_gestion_refuge_page:
+    path:     /gestion_refuge
+    defaults: { _controller: RefugeBundle:Refuge:read_refuge }
+
+
+refugee_afficherDetaille:
+    path:     /afficherD/{id}
+    defaults: { _controller: RefugeBundle:Refuge:afficherDetaille }
+
+refugee_afficherRefugee:
+    path:     /afficherR
+    defaults: { _controller: RefugeBundle:Refuge:afficherRefugee }
+
+refugee_modifierRefugie:
+    path:     /modifierR/{id}
+    defaults: { _controller: RefugeBundle:Refuge:modifierRefugie }
+
+refugee_supprimerRefugie:
+    path:     /supprimerR/{id}
+    defaults: { _controller: RefugeBundle:Refuge:supprimerRefugie }
+refugee_ajoutCamp:
+    path:     /ajoutC
+    defaults: { _controller: RefugeBundle:camp:ajoutCamp }
+refugee_afficherCamp:
+    path:     /ajoutC
+    defaults: { _controller: RefugeBundle:camp:afficherCamp}
+
+refugee_suprimerC:
+    path:     /supprimerC/{id}
+    defaults: { _controller: RefugeBundle:camp:supprimerC}
+refugee_modifierC:
+    path:     /modifierC/{id}
+    defaults: { _controller: RefugeBundle:camp:modifierC}
+
+
+

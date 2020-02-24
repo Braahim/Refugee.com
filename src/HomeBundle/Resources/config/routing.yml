@@ -1,0 +1,16 @@
+home_homepage:
+    path:     /index
+    defaults: { _controller: HomeBundle:Home:index }
+
+home_homepage1:
+    path:     /
+    defaults: { _controller: HomeBundle:Home:home }
+
+home_login:
+    path:     /login1
+    defaults: { _controller: HomeBundle:Home:login }
+
+home_register:
+    path:     /register1
+    defaults: { _controller: HomeBundle:Home:register }
+

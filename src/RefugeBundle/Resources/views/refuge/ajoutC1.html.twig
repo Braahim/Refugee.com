@@ -1,0 +1,84 @@
+{% extends 'base_dashboard.html.twig' %}
+{% block add_refuge %}
+
+    <div class="content">
+        <div class="col-md-12">
+            <div class="card ">
+                <div class="card-header card-header-danger card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">add</i>
+                    </div>
+                    <h4 class="card-title">add refugees</h4>
+                </div>
+                <div class="card-body ">
+
+                    <div class="col-md-12">
+                        <form class="contact-form" name="refugebundle_refuge" method="post">
+                        <div class="row">
+                        <div class="col-md-6">
+                                <div class="form-group bmd-form-group" >
+                                    <label class="bmd-label-floating"  class="required"> nom</label>
+                                    {{ form_widget(form.nom, {'attr': { 'class' : 'form-control' , 'style': 'width:400px;'}}) }}{#                            </div>#}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group" >
+                                    <label class="bmd-label-floating"  class="required"> prenom</label>
+                                    {{ form_widget(form.prenom, {'attr': { 'class' : 'form-control' , 'style': 'width:400px;'}}) }}{#                            </div>#}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group" >
+                                    <label class="bmd-label-floating"  class="required"> nationalite</label>
+                                    {{ form_widget(form.nationalite, {'attr': { 'class' : 'form-control' , 'style': 'width:400px;'}}) }}{#                            </div>#}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group" >
+                                    <label class="bmd-label-floating"  class="required"> date de naissance</label>
+                                    {{ form_widget(form.birthD, {'attr': { 'class' : 'form-control' , 'style': 'width:400px;'}}) }}{#                            </div>#}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group" >
+                                    <label class="bmd-label-floating"  class="required"> sexe </label>
+                                    {{ form_widget(form.sexe, {'attr': { 'class' : 'form-control' , 'style': 'width:400px;'}}) }}{#                            </div>#}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group" >
+                                    <label class="bmd-label-floating"  class="required"> situation sociale </label>
+                                    {{ form_widget(form.socialSit, {'attr': { 'class' : 'form-control' , 'style': 'width:400px;'}}) }}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                    {{ form_widget(form.Entreprise, {'attr': { 'class' : 'form-control' , 'style': 'width:400px;'}}) }}
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group" >
+                                    <label class="bmd-label-floating"  class="required"> lieu de naissance </label>
+                                    {{ form_widget(form.birthLoc, {'attr': { 'class' : 'form-control' , 'style': 'width:400px;'}}) }}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group bmd-form-group" >
+                                    <label class="bmd-label-floating"  class="required"> lieu de naissance </label>
+                                    {{ form_widget(form.img) }}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                    <button  class="btn btn-danger btn-raised" type="submit" id="refugebundle_refuge_Ajouter" name="refugebundle_refuge[Ajouter]">
+                                        Submit
+                                    </button>
+                            </div>
+                        {{ form_row(form._token) }}
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

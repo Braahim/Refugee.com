@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Resume</title>
+    <link type="text/css" href="{{ pathToWeb }}/assets/css/blue.css" rel="stylesheet" />
+    <link type="text/css" href="{{ pathToWeb }}/assets/css/print.css" rel="stylesheet" />
+    <!--[if IE 7]
+    <link type="text/css" href="{{ pathToWeb }}/assets/css/ie7.css') }}" rel="stylesheet" />
+    <![endif]-->
+    <!--[if IE 6]
+
+    <link type="text/css" href="{{ pathToWeb }}/assets/css/ie6.css" rel="stylesheet" />
+    <![endif]--
+
+    <script src="{{ pathToWeb }}/assets/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="{{ pathToWeb }}/assets/js/jquery.tipsy.js" type="text/javascript"></script>
+    <script src="{{ pathToWeb }}/assets/js/cufon.yui.js" type="text/javascript"></script>
+    <script src="{{ pathToWeb }}/assets/js/scrollTo.js" type="text/javascript"></script>
+    <script src="{{ pathToWeb }}/assets/js/myriad.js" type="text/javascript"></script>
+    <script src="{{ pathToWeb }}/assets/js/jquery.colorbox.js" type="text/javascript"></script>
+    <script src="{{ pathToWeb }}/assets/js/custom.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        Cufon.replace('h1,h2');
+    </script>
+
+<body>
+
+
+<-- Begin Wrapper -->
+</head>
+    <div class="container">
+        <div id="wrapper">
+            <div class="wrapper-top"></div>
+            <div class="wrapper-mid">
+                <!-- Begin Paper -->
+                <div id="paper">
+                    <div class="paper-top"></div>
+                    <div id="paper-mid">
+                        <div class="entry">
+                            <!-- Begin Image -->
+
+                            <img src="{{ pathToWeb ~ asset('uploads/images/' ~refugee.img ) }}" alt="..." width="160" height="200">
+
+                            <!-- End Image -->
+                            <!-- Begin Personal Information -->
+
+                            <div class="self">
+                                <h1 class="name">{{ refugee.nom }} <br />
+                                    <span>{{ refugee.prenom }}</span>
+                                    <em>{{ refugee.sexe }}</em></h1>
+                                <!--    <ul>
+                                        <li class="ad">111 Lorem Street, 34785, Ipsum City</li>
+                                        <li class="mail">johnsmith@business.com</li>
+                                        <li class="tel">+11 444 555 22 33</li>
+                                        <li class="web">www.businessweb.com</li>
+                                    </ul> -->
+                            </div>
+                            <!-- End Personal Information -->
+                            <!-- Begin Social -->
+
+                            <!-- End Social -->
+                        </div>
+                        <!-- Begin 1st Row -->
+                        <div class="entry">
+
+                            <h2>Nationalité :</h2>
+                            <p>{{ refugee.nationalite }}</p>
+                        </div>
+                        <!-- End 1st Row -->
+                        <!-- Begin 2nd Row -->
+                        <br/><br/><br/>
+                        <div class="entry">
+
+                            <h2>Date de Naissance : </h2>
+                            <p>{{ refugee.birthD|date("m/d/Y") }}</p>
+                            <div class="content">
+
+
+
+                                <p>Lieu de naissance: {{ refugee.birthLoc }}<br />
+                                    <em></em></p>
+                            </div>
+                        </div>
+
+                        <div class="entry">
+                            <h2>Situation Sociale :</h2>
+                            <p></p>
+
+                            <div class="content">
+                                <p>{{ refugee.socialSit }}<br />
+                                    <em>Bachelor of Science in Graphic Design</em></p>
+
+                            </div>
+                        </div>
+                        <!-- End 3rd Row -->
+                        <!-- Begin 4th Row -->
+                        <div class="entry">
+                            <h2>Camp : </h2>
+                            <p>{{ refugee.camp.libelle }}</p>
+                            <div class="content">
+
+                            </div>
+                        </div>
+                        <div class="entry">
+                            <h2>Date Ajout : </h2>
+                            <p>{{ refugee.currentDate|date('F jS ') }}</p>
+                            <div class="content">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="clear"></div>
+                    <div class="paper-bottom"></div>
+                </div>
+                <!-- End Paper -->
+            </div>
+            <div class="wrapper-bottom"></div>
+        </div>
+    </div>
+
+
+    <!-- End Wrapper -->
+
+    </body>
+    <footer>
+        <br>
+
+        <p>© 2020 Bright</p>
+        <img src="{{ pathToWeb ~ asset('assets/myimg/logo.png' ) }}" alt="..." width="100" height="100">
+    </footer>
+
+    <style>
+        footer {
+            display: inline-flex;
+            justify-content: center;
+            padding: 5px;
+            background-color: whitesmoke;
+            color: #0000;
+        }
+    </style>
+</html>

@@ -1,0 +1,29 @@
+volunteer_homepage:
+    path:     /index
+    defaults: { _controller: volunteerBundle:Default:index }
+
+volunteer_page:
+    path:     /
+    defaults: { _controller: volunteerBundle:Volunteer:volunteer }
+
+volunteer_association_profile:
+    path:     /association
+    defaults: { _controller: volunteerBundle:Volunteer:read_member }
+
+volunteer_association_member_delete:
+    path:     /delete_member/{id}
+    defaults: { _controller: volunteerBundle:Volunteer:delete_member }
+
+volunteer_association_member_add:
+    path:     /add_member
+    defaults: { _controller: volunteerBundle:Volunteer:add_member }
+
+volunteer_association_member_update:
+    path:     /update_member/{id}
+    defaults: { _controller: volunteerBundle:Volunteer:update_member }
+volunteer_ajoutRefugie:
+    path:     /ajoutR
+    defaults: { _controller: RefugeBundle:Refuge:ajoutRefugie }
+
+
+
